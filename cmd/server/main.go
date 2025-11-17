@@ -5,6 +5,7 @@ import (
 
 	"CTF/internal/config"
 	"CTF/internal/storage"
+	web "CTF/internal/web/server"
 )
 
 func main() {
@@ -18,4 +19,8 @@ func main() {
 
 	log.Println("Database initialized ✓")
 	log.Println("Starting HTTP server next...")
+
+	// start web server
+	server := web.NewServer()
+	server.Start()
 }
