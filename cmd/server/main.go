@@ -37,7 +37,7 @@ func main() {
 
 	// --- Routes ---
 	mux := http.NewServeMux()
-	mux.Handle("/login", loginHandler)
+	mux.Handle("/", loginHandler)
 	mux.Handle("/dashboard", withAuth(dashboardHandler.ServeHTTP))
 	mux.Handle("/post/create", withAuth(postHandler.CreatePost))
 	mux.Handle("/post/view", withAuth(postHandler.ViewPost))
